@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  school:
+    build:
+      context: '.'
+      target: development
+    container_name: school_api
+    restart: 'always'
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - '3000:3000'
+    working_dir: /usr/src/app
+    image: school-app
+    env_file: config.env
