@@ -5,6 +5,10 @@ on: pull_request
 jobs:
   scripts:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 12, 14, 16 ]
+    name: Run action with nodejs ${{ matrix.node }} version
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
@@ -17,14 +21,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build the code
-        run: npm run build
-
       - name: Run lint
         run: npm run lint
 
       - name: Run test
         run: npm run test
-
-      - name: Run coverage
-        run: npm run coverage
