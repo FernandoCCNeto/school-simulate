@@ -1,0 +1,390 @@
+{
+	"info": {
+		"_postman_id": "c16a8f37-38a9-4f19-ac46-f10d2c89a5ac",
+		"name": "TCC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "Get Student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{student_service_url}}/{{students_path}}/12312312421",
+							"host": [
+								"{{student_service_url}}"
+							],
+							"path": [
+								"{{students_path}}",
+								"12312312421"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"fernando\",\n    \"birthday\": \"14/05/1921\",\n    \"cpf\": \"12312312421\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{student_service_url}}/{{students_path}}",
+							"host": [
+								"{{student_service_url}}"
+							],
+							"path": [
+								"{{students_path}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Student",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"fernando teste\",\n    \"birthday\": \"14/05/1921\",\n    \"cpf\": \"12312312421\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{student_service_url}}/{{students_path}}",
+							"host": [
+								"{{student_service_url}}"
+							],
+							"path": [
+								"{{students_path}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{student_service_url}}/{{students_path}}",
+							"host": [
+								"{{student_service_url}}"
+							],
+							"path": [
+								"{{students_path}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{student_service_url}}/{{students_path}}/12312312421",
+							"host": [
+								"{{student_service_url}}"
+							],
+							"path": [
+								"{{students_path}}",
+								"12312312421"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Warehouse",
+			"item": [
+				{
+					"name": "Get Warehouse",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{warehouse_service_url}}/{{warehouse_path}}/8c5628fa-1e2c-4192-978f-497d260145b5",
+							"host": [
+								"{{warehouse_service_url}}"
+							],
+							"path": [
+								"{{warehouse_path}}",
+								"8c5628fa-1e2c-4192-978f-497d260145b5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Warehouse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Pen\",\n    \"stockAmmount\": \"12\",\n    \"unitCost\": \"1.20\",\n    \"description\": \"Color blue\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{warehouse_service_url}}/{{warehouse_path}}",
+							"host": [
+								"{{warehouse_service_url}}"
+							],
+							"path": [
+								"{{warehouse_path}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Warehouse",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"8c5628fa-1e2c-4192-978f-497d260145b5\",\n    \"name\": \"Pen c\",\n    \"stockAmmount\": \"12\",\n    \"unitCost\": \"1.20\",\n    \"description\": \"Color blue\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{warehouse_service_url}}/{{warehouse_path}}",
+							"host": [
+								"{{warehouse_service_url}}"
+							],
+							"path": [
+								"{{warehouse_path}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Warehouse",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{warehouse_service_url}}/{{warehouse_path}}",
+							"host": [
+								"{{warehouse_service_url}}"
+							],
+							"path": [
+								"{{warehouse_path}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Warehouse",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{warehouse_service_url}}/{{warehouse_path}}/8c5628fa-1e2c-4192-978f-497d260145b5",
+							"host": [
+								"{{warehouse_service_url}}"
+							],
+							"path": [
+								"{{warehouse_path}}",
+								"8c5628fa-1e2c-4192-978f-497d260145b5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "Get Employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{employee_service_url}}/{{employees_path}}/11425685471",
+							"host": [
+								"{{employee_service_url}}"
+							],
+							"path": [
+								"{{employees_path}}",
+								"11425685471"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"fernando\",\n    \"email\": \"teste@gmail.com\",\n    \"birthday\": \"14/05/1921\",\n    \"cpf\": \"12312312421\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{employee_service_url}}/{{employees_path}}",
+							"host": [
+								"{{employee_service_url}}"
+							],
+							"path": [
+								"{{employees_path}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"fernando\",\n    \"email\": \"teste@gmail.com\",\n    \"birthday\": \"14/05/1921\",\n    \"cpf\": \"12312312421\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{employee_service_url}}/{{employees_path}}",
+							"host": [
+								"{{employee_service_url}}"
+							],
+							"path": [
+								"{{employees_path}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{employee_service_url}}/{{employees_path}}/",
+							"host": [
+								"{{employee_service_url}}"
+							],
+							"path": [
+								"{{employees_path}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{employee_service_url}}/{{employees_path}}/11425685471",
+							"host": [
+								"{{employee_service_url}}"
+							],
+							"path": [
+								"{{employees_path}}",
+								"11425685471"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "school_aplication_url",
+			"value": "localhost:8006"
+		},
+		{
+			"key": "students_path",
+			"value": "students"
+		},
+		{
+			"key": "employees_path",
+			"value": "employees"
+		},
+		{
+			"key": "warehouse_path",
+			"value": "warehouse"
+		},
+		{
+			"key": "student_service_url",
+			"value": "http://localhost:8006"
+		},
+		{
+			"key": "employee_service_url",
+			"value": "http://localhost:8008"
+		},
+		{
+			"key": "warehouse_service_url",
+			"value": "http://localhost:8007"
+		}
+	]
+}

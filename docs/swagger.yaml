@@ -1,0 +1,356 @@
+swagger: "2.0"
+info:
+  description: "Esse e um documento com as rotas dos servicos de estudante, estoque e funcionarios."
+  version: "1.0.0"
+  title: "School Application"
+  contact:
+    email: "fernando.2017235414@unicap.br"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+tags:
+- name: "Student"
+  description: "Student service"
+- name: "Warehouse"
+  description: "Warehouse service"
+- name: "Employee"
+  description: "Employee service"
+schemes:
+- "http"
+paths:
+  /students:
+    post:
+      tags:
+      - "Student"
+      summary: "Add a new student"
+      description: ""
+      operationId: "addstudent"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/Student"
+      responses:
+        "200":
+          description: "OK"
+        "400":
+          description: "Invalid cpf"
+    put:
+      tags:
+      - "Student"
+      summary: "Update a student"
+      description: ""
+      operationId: "updateStudent"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/Student"
+      responses:
+        "200":
+          description: "OK"
+        "400":
+          description: "Invalid cpf"
+  /students/{cpf}:
+    get:
+      tags:
+      - "Student"
+      summary: "Finds student by cpf"
+      operationId: "findStudentByCpf"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "cpf"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+              $ref: "#/definitions/Student"
+        "404":
+          description: "Cpf not found"
+    delete:
+      tags:
+      - "Student"
+      summary: "Deletes a Student"
+      operationId: "deleteStudent"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "cpf"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "OK"
+  /students/:
+    get:
+      tags:
+      - "Student"
+      summary: "Get all students"
+      operationId: "getAllStudents"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Student"
+  /employees:
+    post:
+      tags:
+      - "Employee"
+      summary: "Add a new employee"
+      description: ""
+      operationId: "addemployee"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/Employee"
+      responses:
+        "200":
+          description: "OK"
+        "400":
+          description: "Invalid cpf or email"
+    put:
+      tags:
+      - "Employee"
+      summary: "Update a employee"
+      description: ""
+      operationId: "updateEmployee"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/Employee"
+      responses:
+        "200":
+          description: "OK"
+        "400":
+          description: "Invalid cpf or email"
+  /employees/{cpf}:
+    get:
+      tags:
+      - "Employee"
+      summary: "Finds employee by cpf"
+      operationId: "findEmployeeByCpf"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "cpf"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+              $ref: "#/definitions/Employee"
+        "404":
+          description: "Cpf not found"
+    delete:
+      tags:
+      - "Employee"
+      summary: "Deletes a Employee"
+      operationId: "deleteEmployee"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "cpf"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "OK"
+  /employees/:
+    get:
+      tags:
+      - "Employee"
+      summary: "Get all employees"
+      operationId: "getAllEmployees"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Employee"
+  /warehouse:
+    post:
+      tags:
+      - "Warehouse"
+      summary: "Add a new item in the warehouse"
+      description: ""
+      operationId: "addItem"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/Warehouse"
+      responses:
+        "200":
+          description: "OK"
+    put:
+      tags:
+      - "Warehouse"
+      summary: "Update a item in the warehouse"
+      description: ""
+      operationId: "updateItem"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/Warehouse"
+      responses:
+        "200":
+          description: "OK"
+        "400":
+          description: "id not found"
+  /warehouse/{id}:
+    get:
+      tags:
+      - "Warehouse"
+      summary: "Finds item by id"
+      operationId: "findItemById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+              $ref: "#/definitions/Warehouse"
+        "404":
+          description: "Id not found"
+    delete:
+      tags:
+      - "Warehouse"
+      summary: "Deletes a item by id"
+      operationId: "deleteItem"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "OK"
+  /warehouse/:
+    get:
+      tags:
+      - "Warehouse"
+      summary: "Get all itens in the wirehouse"
+      operationId: "getAllItens"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Warehouse"
+definitions:
+  Employee:
+    type: "object"
+    required:
+    - "name"
+    - "birthday"
+    - "cpf"
+    - "email"
+    properties:
+      name:
+        type: "string"
+        example: "teste"
+      birthday:
+        type: "string"
+        example: "02/04/1963"
+      cpf:
+        type: "string"
+        example: "11111111111"
+      email:
+        type: "string"
+        example: "teste@teste.com"
+  Student:
+    type: "object"
+    required:
+    - "name"
+    - "birthday"
+    - "cpf"
+    properties:
+      name:
+        type: "string"
+        example: "teste"
+      birthday:
+        type: "string"
+        example: "02/04/1963"
+      cpf:
+        type: "string"
+        example: "11111111111"
+  Warehouse:
+    type: "object"
+    required:
+    - "name"
+    - "stockAmmount"
+    - "unitCost"
+    properties:
+      id:
+        type: "string"
+        example: "8c5628fa-1e2c-4192-978f-497d260145b5"
+      name:
+        type: "string"
+        example: "Pen c"
+      stockAmmount:
+        type: "number"
+        example: "12"
+      unitCost:
+        type: "number"
+        example: "1.20"
+      description:
+        type: "string"
+        example: "Color blue"
